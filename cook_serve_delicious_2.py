@@ -44,7 +44,8 @@ class CookServeDelicious2Game(Game):
                 },
                 is_time_consuming=False,
                 is_difficult=False,
-                weight=len(objectives), # Set weight for 50/50 chance between Chef for Hire and CSD objectives
+                # Set weight for 50/50 chance between Chef for Hire and CSD objectives
+                weight=sum(o.weight for o in objectives if self.archipelago_options.include_difficult_objectives or not o.is_difficult),
             ),
         ])
         return objectives
@@ -52,8 +53,8 @@ class CookServeDelicious2Game(Game):
     def csd_objectives(self) -> List[GameObjectiveTemplate]:
         """ Based on the configuration, generates a list of objective templates for CSD mode. """
         objectives = []
-        for entree_count in range(1, self.csd_max_entrees()):
-            for side_count in range(1, self.csd_max_sides()):
+        for entree_count in range(1, self.csd_max_entrees() + 1):
+            for side_count in range(1, self.csd_max_sides() + 1):
                 for drink_count in range(1, self.csd_max_drinks() + 1):
                     for mode in self.csd_modes():
                         objectives.append(GameObjectiveTemplate(
@@ -65,7 +66,7 @@ class CookServeDelicious2Game(Game):
                             },
                             is_time_consuming=False,
                             is_difficult=mode == "Stress",
-                            weight=1,
+                            weight=entree_count, # Favor higher entree counts
                         ))
         return objectives
 
