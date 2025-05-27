@@ -1,6 +1,6 @@
 # KeymastersKeepGames
 My game implementations for [Keymasters Keep](https://github.com/SerpentAI/Archipelago/releases?q=keymaster&expanded=true) -
-a customer world for [Archipelago](https://archipelago.gg/) - created by SerpentAI.
+a custom world for [Archipelago](https://archipelago.gg/) - created by SerpentAI.
 
 # Games
 - Cook, Serve, Delicious! 2!!
@@ -9,4 +9,5 @@ a customer world for [Archipelago](https://archipelago.gg/) - created by Serpent
 Details to come.
 
 ### Credits
-Chef for Hire level requirements sourced from: https://steamcommunity.com/sharedfiles/filedetails/?id=1143264542
+- Chef for Hire level requirements sourced from: https://steamcommunity.com/sharedfiles/filedetails/?id=1143264542
+- CSD Mode foods sourced from: https://cookservedelicious.fandom.com/wiki/Recipes_(Cook,_Serve,_Delicious!_2!!)

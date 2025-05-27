@@ -101,6 +101,297 @@ class CookServeDelicious2Game(Game):
             "Executive's Decision": [70, 73, 79, 80, 84, 88, 89, 91, 92, 93, 95, 96, 97, 98, 99, 100]
         }
 
+    @staticmethod
+    def csd_modes() -> List[str]:
+        return [
+            "Classic",
+            "Standard",
+            "Stress",
+            "Zen"
+        ]
+
+    def csd_max_entrees(self):
+        """
+        Returns the maximum number of entrees that can be served in a single shift.
+        This is based on the maximum Yum Level.
+        """
+        if self.max_yum_level < 4:
+            return 3
+        elif self.max_yum_level < 14:
+            return 4
+        elif self.max_yum_level < 18:
+            return 5
+        else:
+            return 6
+
+    def csd_max_sides(self):
+        """
+        Returns the maximum number of sides that can be served in a single shift.
+        This is based on the maximum Yum Level.
+        """
+        if self.max_yum_level < 7:
+            return 1
+        elif self.max_yum_level < 21:
+            return 2
+        else:
+            return 3
+
+    def csd_max_drinks(self):
+        """
+        Returns the maximum number of drinks that can be served in a single shift.
+        This is based on the maximum Yum Level.
+        """
+        if self.max_yum_level < 11:
+            return 1
+        else:
+            return 2
+
+    @functools.cached_property
+    def csd_entrees(self) -> List[str]:
+        """Entrees that are initially unlocked or can be purchased."""
+        return [
+            "Chili",
+            "Chowder",
+            "Gumbo",
+            "Soup",
+            "Stew",
+            "Corndogs",
+            "Egg Drop Soup",
+            "French Toast",
+            "Lasagna",
+            "Brisket Slices",
+            "Turkey Slices",
+            "Ham Slices",
+            "Sausage Slices",
+            "Muffins",
+            "Oatmeal",
+            "Pizza by the Slice",
+            "Pretzel",
+            "Tiramisu",
+            "Chicken Sandwich",
+            "Japanese Fried Rice",
+            "Lamb Chops",
+            "Meatloaf",
+            "Ribs",
+            "Pig's Blood Cake",
+            "Tabbouleh",
+            "Tamales",
+            "Spaghetti",
+            "Enchiladas",
+            "Rote Grutze",
+            "Glazed Donut",
+            "Frozen Bananas",
+            "Cinnamon Buns",
+            "Brownies",
+            "Chicken Strips",
+            "Fried Shrimp",
+            "Steak Fingers",
+            "Griddle Eggs",
+            "Bean Burger",
+            "Chimichanga",
+            "Hamburger",
+            "Hotdog",
+            "Grilled Chicken Sandwich",
+            "Sopapillas",
+            "Sushi",
+            "Turkey Leg",
+            "Tres Leches",
+            "Breakfast Sandwich",
+            "Funnel Cake",
+            "Pancakes",
+            "Pasta",
+            "Lobster",
+            "Quesadilla",
+            "Ramen",
+            "Salisbury Steak",
+            "Spinach Veggie Pasta",
+            "Steak",
+            "Tacos",
+            "Traditional Hot Wings",
+            "Wok Dish: Beef and Pork",
+            "Wok Dish: Chicken",
+            "Wok Dish: Shrimp and Veg.",
+            "Baked Hot Wings",
+            "Calzone",
+            "Chicken Breast",
+            "Club Sandwich",
+            "Corn Chip Pie",
+            "Crab Cakes",
+            "Crab Legs",
+            "Creme Brulee",
+            "Dessert Shooters",
+            "Fresh Fish",
+            "Fried Chicken",
+            "Hiyayakko Tofu",
+            "Ice Cream Sundae",
+            "Japanese Crepe",
+            "Steamed Momos",
+            "Okonomiyaki",
+            "Pizza",
+            "Pork Loin",
+            "Salad",
+            "Samosas",
+            "Small Custom Sub",
+            "Taiwanese Shaved Ice",
+            "Stadium Nachos",
+            "Frozen Lattes",
+            "Hot Lattes",
+            "Iced Lattes",
+            "Milkshakes",
+            "Smoothies",
+            "Espresso Shots",
+            "Htapothi sti Skhara",
+            "Organic Salad",
+            "Ice Cream Scoops",
+            "Specialty Donuts",
+        ]
+
+    @functools.cached_property
+    def csd_locked_entrees(self) -> List[str]:
+        """Entrees that are locked and can only be acquired through randomized unlocks."""
+        return [
+            "Prime Rib",
+            "Biscuits and Gravy",
+            "Chopped Brisket Sandwich",
+            "Roast Beef Sandwich",
+            "Slice of Pie",
+            "Chow Mein",
+            "Deluxe Nachos",
+            "Pulled Pork Sandwich",
+            "Chicken Nuggets",
+            "Fried Fish",
+            "Cannoli",
+            "Yaki Tomorokoshi",
+            "Cereal",
+            "Breakfast Burrito",
+            "Burrito",
+            "Chicken Fried Meats",
+            "Filet Mignon",
+            "Veal Marsala",
+            "Omelette",
+            "Sausage and Sauerkraut",
+            "Sizzling Fajitas",
+            "Sliders",
+            "Stuffed Peppers",
+            "Tostadas",
+            "Waffles",
+            "Bananas Foster",
+            "Beef Wellington",
+            "Carpaccio",
+            "Eggplant Parmigiana",
+            "Escargot",
+            "Gazpacho",
+            "Oysters",
+            "Pies",
+            "Pot Pie",
+            "Quiche",
+            "Risotto",
+            "Sashimi",
+            "Shish Kabob",
+            "Souffle",
+            "Steamed Mussels",
+            "Sub Sandwich",
+            "Whole Cakes",
+            "Yakizakana",
+            "Agedashi Tofu",
+        ]
+
+    @functools.cached_property
+    def csd_sides(self) -> List[str]:
+        """Sides that are initially unlocked or can be purchased."""
+        return [
+            "Asparagus",
+            "Bacon",
+            "Baked Potato",
+            "Black Beans",
+            "Broccoli",
+            "Brussels Sprouts",
+            "Side Chow Mein",
+            "Corn on the Cob",
+            "Sauerkraut",
+            "Dinner Rolls",
+            "Edamame",
+            "Side Egg Drop Soup",
+            "Egg Rolls",
+            "Fries",
+            "Fried Okra",
+            "Fruit Spread",
+            "German Red Cabbage",
+            "Green Beans",
+            "Hash Browns",
+            "Japanese Fried Rice Side",
+            "Kale Chips",
+            "Mac n' Cheese",
+            "Mashed Potatoes",
+            "Mexican Rice",
+            "Onion Rings",
+            "Pakora",
+            "Peas",
+            "Pinto Beans",
+            "Potato Salad",
+            "Black Rice",
+            "Refried Beans",
+            "Brown Rice",
+            "Sausage Links",
+            "Scrambled Eggs",
+            "Side Chili",
+            "Side Chowder",
+            "Side Gumbo",
+            "Side Soup",
+            "Side Stew",
+            "Side Salad",
+            "Grits",
+            "Steamed Vegetables",
+            "Tater Tots",
+            "Toast",
+            "Tuscan Beans",
+            "Cookies",
+            "White Rice",
+            "Wild Rice",
+            "Marshmallow Squares",
+            "Croissants",
+            "Specialty Fries",
+            "Side Oatmeal",
+        ]
+
+    @functools.cached_property
+    def csd_locked_sides(self) -> List[str]:
+        """Sides that are locked and can only be acquired through randomized unlocks."""
+        return [
+            "Boiled Eggs",
+            "Fried Seafood Sides",
+            "Grilled Fennel",
+            "Kimchi",
+            "Onigiri",
+            "Roasted Cauliflower",
+            "Stuffed Artichokes",
+            "Tazukuri",
+        ]
+
+    @functools.cached_property
+    def csd_drinks(self) -> List[str]:
+        """Drinks that are initially unlocked or can be purchased."""
+        return [
+            "Beer",
+            "Coffee",
+            "Iced Tea",
+            "Juice Bar",
+            "Fresh Lemonade",
+            "Soda Fountain",
+            "Horchata",
+            "Hot Tea",
+        ]
+
+    @functools.cached_property
+    def csd_locked_drinks(self) -> List[str]:
+        """Drinks that are locked and can only be acquired through randomized unlocks."""
+        return [
+            "Craft Beer",
+            "Pineapple Juice",
+            "Red Wine",
+            "White Wine",
+        ]
+
 class CookServeDelicious2MaxYumLevel(Range):
     """
     The maximum Yum Level that will be required for trials.
