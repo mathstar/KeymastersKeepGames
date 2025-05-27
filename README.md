@@ -4,3 +4,9 @@ a customer world for [Archipelago](https://archipelago.gg/) - created by Serpent
 
 # Games
 - Cook, Serve, Delicious! 2!!
+
+## Cook, Serve, Delicious! 2!!
+Details to come.
+
+### Credits
+Chef for Hire level requirements sourced from: https://steamcommunity.com/sharedfiles/filedetails/?id=1143264542
