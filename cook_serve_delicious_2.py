@@ -17,6 +17,7 @@ from ..enums import KeymastersKeepGamePlatforms
 class CookServeDelicious2ArchipelagoOptions:
     cook_serve_delicious_2_max_yum_level: CookServeDelicious2MaxYumLevel
     cook_serve_delicious_2_display_yum_level_requirements: CookServeDelicious2DisplayYumLevelRequirements
+    cook_serve_delicious_2_include_locked_foods: CookServeDelicious2IncludeLockedFoods
 
 # Main Class
 class CookServeDelicious2Game(Game):
@@ -34,7 +35,8 @@ class CookServeDelicious2Game(Game):
     options_cls = CookServeDelicious2ArchipelagoOptions
 
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
-        return [
+        objectives = self.csd_objectives()
+        objectives.extend([
             GameObjectiveTemplate(
                 label="Get a Gold medal in SHIFT",
                 data={
@@ -42,9 +44,30 @@ class CookServeDelicious2Game(Game):
                 },
                 is_time_consuming=False,
                 is_difficult=False,
-                weight=1,
+                weight=len(objectives), # Set weight for 50/50 chance between Chef for Hire and CSD objectives
             ),
-        ]
+        ])
+        return objectives
+
+    def csd_objectives(self) -> List[GameObjectiveTemplate]:
+        """ Based on the configuration, generates a list of objective templates for CSD mode. """
+        objectives = []
+        for entree_count in range(1, self.csd_max_entrees()):
+            for side_count in range(1, self.csd_max_sides()):
+                for drink_count in range(1, self.csd_max_drinks() + 1):
+                    for mode in self.csd_modes():
+                        objectives.append(GameObjectiveTemplate(
+                            label=f"Get a Gold medal in Cook Serve Delicious in {mode} mode with entrees: [ENTREES], sides: [SIDES], drinks: [DRINKS]",
+                            data={
+                                "ENTREES": (self.csd_entrees, entree_count),
+                                "SIDES": (self.csd_sides, side_count),
+                                "DRINKS": (self.csd_drinks, drink_count),
+                            },
+                            is_time_consuming=False,
+                            is_difficult=mode == "Stress",
+                            weight=1,
+                        ))
+        return objectives
 
     @property
     def max_yum_level(self) -> int:
@@ -146,8 +169,38 @@ class CookServeDelicious2Game(Game):
         else:
             return 2
 
-    @functools.cached_property
     def csd_entrees(self) -> List[str]:
+        """
+        Returns a list of entrees that will be included in the CSD food pool.
+        This includes both initially unlocked and locked entrees based on the configuration.
+        """
+        if self.archipelago_options.cook_serve_delicious_2_include_locked_foods.value:
+            return self.csd_unlocked_entrees + self.csd_locked_entrees
+        else:
+            return self.csd_unlocked_entrees
+
+    def csd_sides(self) -> List[str]:
+        """
+        Returns a list of sides that will be included in the CSD food pool.
+        This includes both initially unlocked and locked sides based on the configuration.
+        """
+        if self.archipelago_options.cook_serve_delicious_2_include_locked_foods.value:
+            return self.csd_unlocked_sides + self.csd_locked_sides
+        else:
+            return self.csd_unlocked_sides
+
+    def csd_drinks(self) -> List[str]:
+        """
+        Returns a list of drinks that will be included in the CSD food pool.
+        This includes both initially unlocked and locked drinks based on the configuration.
+        """
+        if self.archipelago_options.cook_serve_delicious_2_include_locked_foods.value:
+            return self.csd_unlocked_drinks + self.csd_locked_drinks
+        else:
+            return self.csd_unlocked_drinks
+
+    @functools.cached_property
+    def csd_unlocked_entrees(self) -> List[str]:
         """Entrees that are initially unlocked or can be purchased."""
         return [
             "Chili",
@@ -297,7 +350,7 @@ class CookServeDelicious2Game(Game):
         ]
 
     @functools.cached_property
-    def csd_sides(self) -> List[str]:
+    def csd_unlocked_sides(self) -> List[str]:
         """Sides that are initially unlocked or can be purchased."""
         return [
             "Asparagus",
@@ -369,7 +422,7 @@ class CookServeDelicious2Game(Game):
         ]
 
     @functools.cached_property
-    def csd_drinks(self) -> List[str]:
+    def csd_unlocked_drinks(self) -> List[str]:
         """Drinks that are initially unlocked or can be purchased."""
         return [
             "Beer",
@@ -410,4 +463,15 @@ class CookServeDelicious2DisplayYumLevelRequirements(Toggle):
     This may be considered spoilers but can be helpful for knowing what level you need to reach for each trial.
     """
     display_name = "Display Yum Level Requirements"
+    default = False
+
+class CookServeDelicious2IncludeLockedFoods(Toggle):
+    """
+    Include locked entrees, sides, and drinks in the pool for CSD mode trials.
+
+    By default, only those foods you start with or can purchase are included, if you enable this option foods that are unlocked
+    randomly at milestones will be included. It is recommended to only enable this if you have a save with all foods unlocked
+    or are willing to grind to unlock them.
+    """
+    display_name = "Include Locked Foods"
     default = False
