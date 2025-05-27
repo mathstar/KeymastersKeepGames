@@ -16,6 +16,7 @@ from ..enums import KeymastersKeepGamePlatforms
 @dataclass
 class CookServeDelicious2ArchipelagoOptions:
     cook_serve_delicious_2_max_yum_level: CookServeDelicious2MaxYumLevel
+    cook_serve_delicious_2_display_yum_level_requirements: CookServeDelicious2DisplayYumLevelRequirements
 
 # Main Class
 class CookServeDelicious2Game(Game):
@@ -35,13 +36,31 @@ class CookServeDelicious2Game(Game):
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
         return [
             GameObjectiveTemplate(
-                label="Do a thing",
-                data={},
+                label="Get a Gold medal in SHIFT",
+                data={
+                    "SHIFT": (self.shifts, 1)
+                },
                 is_time_consuming=False,
                 is_difficult=False,
                 weight=1,
             ),
         ]
+
+    @property
+    def max_yum_level(self) -> int:
+        return self.archipelago_options.cook_serve_delicious_2_max_yum_level.value
+
+    @property
+    def display_yum_level(self) -> int:
+        return self.archipelago_options.cook_serve_delicious_2_display_yum_level_requirements.value
+
+    def shifts(self) -> List[str]:
+        result = []
+        for restaurant, levels in self.chef_for_hire_level_requirements.items():
+            for index, level in enumerate(levels):
+                if level <= self.max_yum_level:
+                    result.append(f"{restaurant} - Shift {index + 1}{ ' (Yum Level ' + str(level) + ')' if self.display_yum_level else ''}")
+        return result
 
     @functools.cached_property
     def chef_for_hire_level_requirements(self) -> Dict[str, List[int]]:
@@ -92,3 +111,12 @@ class CookServeDelicious2MaxYumLevel(Range):
     range_start = 10
     range_end = 125
     default = 50
+
+class CookServeDelicious2DisplayYumLevelRequirements(Toggle):
+    """
+    Displays the Yum Level requirements for each Chef for Hire shift on the trial description.
+
+    This may be considered spoilers but can be helpful for knowing what level you need to reach for each trial.
+    """
+    display_name = "Display Yum Level Requirements"
+    default = False
