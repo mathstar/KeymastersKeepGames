@@ -45,4 +45,3 @@ Cook, Serve, Delicious! 2!! is a fast-paced cooking simulation game where player
 
 ### Credits
 - Chef for Hire level requirements sourced from: https://steamcommunity.com/sharedfiles/filedetails/?id=1143264542
-- CSD Mode foods sourced from: https://cookservedelicious.fandom.com/wiki/Recipes_(Cook,_Serve,_Delicious!_2!!)
