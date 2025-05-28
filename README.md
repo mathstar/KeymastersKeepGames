@@ -10,7 +10,19 @@ Cook, Serve, Delicious! 2!! is a fast-paced cooking simulation game where player
 
 [Steam](https://store.steampowered.com/app/386620/Cook_Serve_Delicious_2/)
 
+The Keymasters Keep implementation includes trials for all Chef for Hire shifts as well as the Cook, Serve, Delicious 
+restaurant for each mode using randomly generated foods.
+
 ### Settings
+
+* **include_difficult_objectives (global option):** If difficult objectives are enabled, Stress mode will be included in CSD trails.
+* **cook_serve_delicious_2_max_yum_level:** The maximum Yum Level that will be required for trials (Chef for Hire level unlocks, 
+and menu slots for CSD). You should either have a save with at least this Yum Level, or be willing to grind to this Yum Level.
+* **cook_serve_delicious_2_display_yum_level_requirements:** Displays the Yum Level requirements for each Chef for Hire 
+shift on the trial description. Can be helpful for knowing what level you need to reach for each trial, but may be considered spoilers.
+* **cook_serve_delicious_2_include_locked_foods:** Include locked entrees, sides, and drinks in the pool for CSD mode trials.
+These foods are unlocked randomly when certain milestones are achieved, so it is recommended to only enable this if you 
+have a save with all foods unlocked or are willing to grind to unlock them.
 
 ```yaml
   cook_serve_delicious_2_max_yum_level:
