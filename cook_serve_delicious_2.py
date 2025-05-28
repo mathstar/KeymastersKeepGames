@@ -38,7 +38,7 @@ class CookServeDelicious2Game(Game):
         objectives = self.csd_objectives()
         objectives.extend([
             GameObjectiveTemplate(
-                label="Get a Gold medal in SHIFT",
+                label="Get a Perfect Day in SHIFT",
                 data={
                     "SHIFT": (self.shifts, 1)
                 },
@@ -58,7 +58,7 @@ class CookServeDelicious2Game(Game):
                 for drink_count in range(1, self.csd_max_drinks() + 1):
                     for mode in self.csd_modes():
                         objectives.append(GameObjectiveTemplate(
-                            label=f"Get a Gold medal in Cook Serve Delicious in {mode} mode with entrees: [ENTREES], sides: [SIDES], drinks: [DRINKS]",
+                            label=f"Get a Perfect Day in Cook Serve Delicious in {mode} mode with entrees: [ENTREES], sides: [SIDES], drinks: [DRINKS]",
                             data={
                                 "ENTREES": (self.csd_entrees, entree_count),
                                 "SIDES": (self.csd_sides, side_count),
