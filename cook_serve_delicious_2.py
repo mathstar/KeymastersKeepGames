@@ -254,7 +254,6 @@ class CookServeDelicious2Game(Game):
             "Funnel Cake",
             "Pancakes",
             "Pasta",
-            "Lobster",
             "Quesadilla",
             "Ramen",
             "Salisbury Steak",
@@ -348,6 +347,7 @@ class CookServeDelicious2Game(Game):
             "Whole Cakes",
             "Yakizakana",
             "Agedashi Tofu",
+            "Lobster",
         ]
 
     @functools.cached_property
