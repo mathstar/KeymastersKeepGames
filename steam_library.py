@@ -55,26 +55,30 @@ class SteamLibraryGame(Game):
 class SteamLibraryMinTimePlayed(NamedRange):
     """
     Only include games from your steam library that have been played at least this many minutes.
+
+    Use -1 or "no_limit" for no minimum.
     """
     display_name = "Steam Library Min-Time Played"
-    default = "no limit"
+    default = 0
     range_start = 0
     range_end = 5256000
     special_range_names = {
-        "no limit": 0
+        "no_limit": 0
     }
 
 class SteamLibraryMaxTimePlayed(NamedRange):
     """
     Only include games from your steam library that have been played at most this many minutes.
+
+    Use -1 or "no_limit" for no maximum.
     """
     display_name = "Steam Library Max-Time Played"
-    default = "no limit"
+    default = -1
     range_start = -1
     range_end = 5256000
     special_range_names = {
-        "no limit": -1,
-        "never played": 0,
+        "no_limit": -1,
+        "never_played": 0,
     }
 
 class SteamLibrarySteamID(FreeText):

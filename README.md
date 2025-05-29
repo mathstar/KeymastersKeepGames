@@ -4,6 +4,7 @@ a custom world for [Archipelago](https://archipelago.gg/) - created by SerpentAI
 
 # Games
 - [Cook, Serve, Delicious! 2!!](#cook-serve-delicious-2)
+- [[Meta] Steam Library](#meta-steam-library)
 
 ## Cook, Serve, Delicious! 2!!
 Cook, Serve, Delicious! 2!! is a fast-paced cooking simulation game where players manage a restaurant and serve various dishes to customers. The game features a variety of food items, cooking mechanics, and challenges.
@@ -57,3 +58,50 @@ have a save with all foods unlocked or are willing to grind to unlock them.
 
 ### Credits
 - Chef for Hire level requirements sourced from: https://steamcommunity.com/sharedfiles/filedetails/?id=1143264542
+
+## [Meta] Steam Library
+Steam Library is a meta game that picks games from your Steam library based on min and max playtime settings. Due to the
+nature of using the Steam API this game requires some special handling to set up and generate.
+
+### Setup
+* You will need a Steam Web API key to use this game. You can get one from the [Steam API Key page](https://steamcommunity.com/dev/apikey).
+* When generating a multiworld with this game, you will need to provide your Steam Web API key as a STEAM_API_KEY environment variable.
+
+### Settings
+
+* **steam_library_min_time_played:** The minimum playtime in minutes for a game to be included in the pool. ("no_limit" is provided as an equivalent to 0)
+* **steam_library_max_time_played:** The maximum playtime in minutes for a game to be included in the pool. (use "no_limit" or -1 for no limit, "never_played" is equivalent to 0)
+* **steam_library_steam_id:** The Steam ID of the user whose library will be used. You can find your Steam ID by visiting your profile page and looking at the URL, or by using a service like [SteamID.io](https://steamid.io/).
+
+```yaml
+  steam_library_min_time_played:
+    # Only include games from your steam library that have been played at least this many minutes.
+    # 
+    # Use -1 or "no_limit" for no minimum.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 5256000
+    random: 0
+    random-low: 0
+    random-high: 0
+    no_limit: 50 # equivalent to 0
+
+  steam_library_max_time_played:
+    # Only include games from your steam library that have been played at most this many minutes.
+    # 
+    # Use -1 or "no_limit" for no maximum.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is -1
+    # Maximum value is 5256000
+    random: 0
+    random-low: 0
+    random-high: 0
+    no_limit: 50 # equivalent to -1
+    never_played: 0 # equivalent to 0
+
+  steam_library_steam_id:
+    # Steam ID to use for fetching the library.
+    '': 50
+```
