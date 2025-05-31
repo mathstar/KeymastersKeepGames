@@ -110,3 +110,8 @@ nature of using the Steam API this game requires some special handling to set up
     # List of game names (must be an exact match) or Steam App IDs to exclude from the Steam library.
     []
 ```
+
+## The Sims 4
+
+### Credits
+- Pack data sourced from: https://sims.fandom.com/wiki/The_Sims_4
