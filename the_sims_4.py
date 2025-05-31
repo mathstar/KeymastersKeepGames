@@ -148,3 +148,399 @@ class Sims4CreatorKits(Enum):
     REFINED_LIVING_ROOM = "Refined Living Room Creator Kit"
     SLEEK_BATHROOOM = "Sleek Bathroom Creator Kit"
     SWEET_ALLURE = "Sweet Allure Creator Kit"
+
+class Sims4Skill:
+    name: str
+    max_level: int
+    required_packs: Set[Sims4ExpansionPack | Sims4GamePack | Sims4StuffPack | Sims4Kit | Sims4CreatorKits]
+    age: str
+
+    def __init__(self, name: str, max_level: int,
+                 required_packs: Set[Sims4ExpansionPack | Sims4GamePack | Sims4StuffPack | Sims4Kit | Sims4CreatorKits] = None,
+                 age: str = "Adult"):
+        self.name = name
+        self.max_level = max_level
+        if required_packs is None:
+            required_packs = set()
+        self.required_packs = required_packs
+        self.age = age
+
+sims4_skills = [
+    # Base Game Skills
+    Sims4Skill(
+        name="Charisma",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Comedy",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Cooking",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Fishing",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Fitness",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Gardening",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Gourmet Cooking",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Guitar",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Handiness",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Logic",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Mischief",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Mixology",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Painting",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Photography",
+        max_level=5,
+    ),
+    Sims4Skill(
+        name="Piano",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Programming",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Rocket Science",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Video Gaming",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Violin",
+        max_level=10,
+    ),
+    Sims4Skill(
+        name="Writing",
+        max_level=10,
+    ),
+
+    # Toddler Skills
+    Sims4Skill(
+        name="Communication",
+        max_level=5,
+        age="Toddler"
+    ),
+    Sims4Skill(
+        name="Imagination",
+        max_level=5,
+        age="Toddler"
+    ),
+    Sims4Skill(
+        name="Movement",
+        max_level=5,
+        age="Toddler"
+    ),
+    Sims4Skill(
+        name="Potty",
+        max_level=5,
+        age="Toddler"
+    ),
+    Sims4Skill(
+        name="Thinking",
+        max_level=5,
+        age="Toddler"
+    ),
+
+    # Child Skills
+    Sims4Skill(
+        name="Creativity",
+        max_level=10,
+        age="Child"
+    ),
+    Sims4Skill(
+        name="Mental",
+        max_level=10,
+        age="Child"
+    ),
+    Sims4Skill(
+        name="Motor",
+        max_level=10,
+        age="Child"
+    ),
+    Sims4Skill(
+        name="Social",
+        max_level=10,
+        age="Child"
+    ),
+
+    # Outdoor Retreat Skills
+    Sims4Skill(
+        name="Herbalism",
+        max_level=10,
+        required_packs={Sims4GamePack.OUTDOOR_RETREAT}
+    ),
+
+    # Get to Work Skills
+    Sims4Skill(
+        name="Baking",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.GET_TO_WORK}
+    ),
+
+    # Spa Day Skills
+    Sims4Skill(
+        name="Wellness",
+        max_level=10,
+        required_packs={Sims4GamePack.SPA_DAY}
+    ),
+
+    # Get Together Skills
+    Sims4Skill(
+        name="Dancing",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.GET_TOGETHER}
+    ),
+    Sims4Skill(
+        name="DJ Mixing",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.GET_TOGETHER}
+    ),
+
+    # City Living Skills
+    Sims4Skill(
+        name="Singing",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.CITY_LIVING}
+    ),
+
+    # Vampires Skills
+    Sims4Skill(
+        name="Pipe Organ",
+        max_level=10,
+        required_packs={Sims4GamePack.VAMPIRES}
+    ),
+    Sims4Skill(
+        name="Vampire Lore",
+        max_level=15,
+        required_packs={Sims4GamePack.VAMPIRES}
+    ),
+
+    # Bowling Night Skills
+    Sims4Skill(
+        name="Bowling",
+        max_level=5,
+        required_packs={Sims4StuffPack.BOWLING_NIGHT}
+    ),
+
+    # Parenthood Skills
+    Sims4Skill(
+        name="Parenting",
+        max_level=10,
+        required_packs={Sims4GamePack.PARENTHOOD}
+    ),
+
+    # Cats & Dogs Skills
+    Sims4Skill(
+        name="Pet Training",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.CATS_AND_DOGS}
+    ),
+    Sims4Skill(
+        name="Veterinarian",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.CATS_AND_DOGS}
+    ),
+
+    # Jungle Adventure Skills
+    Sims4Skill(
+        name="Archaeology",
+        max_level=10,
+        required_packs={Sims4GamePack.JUNGLE_ADVENTURE}
+    ),
+    Sims4Skill(
+        name="Selvadoradian Culture",
+        max_level=10,
+        required_packs={Sims4GamePack.JUNGLE_ADVENTURE}
+    ),
+
+    # Seasons Skills
+    Sims4Skill(
+        name="Flower Arranging",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.SEASONS}
+    ),
+
+    # Get Famous Skills
+    Sims4Skill(
+        name="Acting",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.GET_FAMOUS}
+    ),
+    Sims4Skill(
+        name="Media Production",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.GET_FAMOUS}
+    ),
+
+    # Discover University Skills
+    Sims4Skill(
+        name="Research & Debate",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.DISCOVER_UNIVERSITY}
+    ),
+    Sims4Skill(
+        name="Robotics",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.DISCOVER_UNIVERSITY}
+    ),
+
+    # Eco Lifestyle Skills
+    Sims4Skill(
+        name="Fabrication",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.ECO_LIFESTYLE}
+    ),
+    Sims4Skill(
+        name="Juice Fizzing",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.ECO_LIFESTYLE}
+    ),
+
+    # Nifty Knitting Skills
+    Sims4Skill(
+        name="Knitting",
+        max_level=10,
+        required_packs={Sims4StuffPack.NIFTY_KNITTING}
+    ),
+
+    # Snowy Escape Skills
+    Sims4Skill(
+        name="Rock Climbing",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.SNOWY_ESCAPE}
+    ),
+    Sims4Skill(
+        name="Skiing",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.SNOWY_ESCAPE}
+    ),
+    Sims4Skill(
+        name="Snowboarding",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.SNOWY_ESCAPE}
+    ),
+
+    # Paranormal Skills
+    Sims4Skill(
+        name="Medium",
+        max_level=5,
+        required_packs={Sims4StuffPack.PARANORMAL}
+    ),
+
+    # Cottage Living Skills
+    Sims4Skill(
+        name="Cross-Stitch",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.COTTAGE_LIVING}
+    ),
+
+    # High School Years Skills
+    Sims4Skill(
+        name="Entrepreneur",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.HIGH_SCHOOL_YEARS}
+    ),
+
+    # Horse Ranch Skills
+    Sims4Skill(
+        name="Horse Riding",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.HORSE_RANCH}
+    ),
+    Sims4Skill(
+        name="Nectar Making",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.HORSE_RANCH}
+    ),
+    Sims4Skill(
+        name="Agility (Horse)",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.HORSE_RANCH},
+        age="Horse"
+    ),
+    Sims4Skill(
+        name="Endurance (Horse)",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.HORSE_RANCH},
+        age="Horse"
+    ),
+    Sims4Skill(
+        name="Jumping (Horse)",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.HORSE_RANCH},
+        age="Horse"
+    ),
+    Sims4Skill(
+        name="Temperament (Horse)",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.HORSE_RANCH},
+        age="Horse"
+    ),
+
+    # Crystal Creations Skills
+    Sims4Skill(
+        name="Gemology",
+        max_level=10,
+        required_packs={Sims4StuffPack.CRYSTAL_CREATIONS}
+    ),
+
+    # Lovestruck Skills
+    Sims4Skill(
+        name="Romance",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.LOVESTRUCK}
+    ),
+
+    # Life & Death Skills
+    Sims4Skill(
+        name="Thanatology",
+        max_level=5,
+        required_packs={Sims4ExpansionPack.LIFE_AND_DEATH}
+    ),
+
+    # Businesses & Hobbies Skills
+    Sims4Skill(
+        name="Pottery",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.BUSINESSES_AND_HOBBIES}
+    ),
+    Sims4Skill(
+        name="Tattooing",
+        max_level=10,
+        required_packs={Sims4ExpansionPack.BUSINESSES_AND_HOBBIES}
+    ),
+]
