@@ -72,6 +72,7 @@ nature of using the Steam API this game requires some special handling to set up
 * **steam_library_min_time_played:** The minimum playtime in minutes for a game to be included in the pool. ("no_limit" is provided as an equivalent to 0)
 * **steam_library_max_time_played:** The maximum playtime in minutes for a game to be included in the pool. (use "no_limit" or -1 for no limit, "never_played" is equivalent to 0)
 * **steam_library_steam_id:** The Steam ID of the user whose library will be used. You can find your Steam ID by visiting your profile page and looking at the URL, or by using a service like [SteamID.io](https://steamid.io/).
+* **steam_library_excluded_games:** A list of game names (must exactly match steam listing including symbols) or Steam App IDs to exclude from the Steam library. This can be used to filter out games you don't want to include in the pool.
 
 ```yaml
   steam_library_min_time_played:
@@ -104,4 +105,8 @@ nature of using the Steam API this game requires some special handling to set up
   steam_library_steam_id:
     # Steam ID to use for fetching the library.
     '': 50
+
+  steam_library_excluded_games:
+    # List of game names (must be an exact match) or Steam App IDs to exclude from the Steam library.
+    []
 ```

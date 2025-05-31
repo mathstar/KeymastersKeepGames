@@ -8,7 +8,7 @@ from typing import List, Dict, Set
 
 from dataclasses import dataclass
 
-from Options import NamedRange, FreeText
+from Options import NamedRange, FreeText, OptionSet
 
 from ..game import Game
 from ..game_objective_template import GameObjectiveTemplate
@@ -21,6 +21,7 @@ class SteamLibraryArchipelagoOptions:
     steam_library_min_time_played: SteamLibraryMinTimePlayed
     steam_library_max_time_played: SteamLibraryMaxTimePlayed
     steam_library_steam_id: SteamLibrarySteamID
+    steam_library_excluded_games: SteamLibraryExcludedGames
 
 # Main Class
 class SteamLibraryGame(Game):
@@ -50,7 +51,13 @@ class SteamLibraryGame(Game):
         print(f"Filtering Steam library games with min_time_played={min_time_played} and max_time_played={max_time_played}")
         return [game["name"] for game in steam_library.games(self.archipelago_options.steam_library_steam_id.value)
                 if game["playtime_forever"] >= min_time_played
-                and (max_time_played == -1 or game["playtime_forever"] <= max_time_played)]
+                and (max_time_played == -1 or game["playtime_forever"] <= max_time_played)
+                and game["name"] not in self.excluded_games()
+                and str(game["appid"]) not in self.excluded_games()]
+
+    def excluded_games(self) -> Set[str]:
+        excluded_games = self.archipelago_options.steam_library_excluded_games.value
+        return excluded_games
 
 class SteamLibraryMinTimePlayed(NamedRange):
     """
@@ -86,6 +93,12 @@ class SteamLibrarySteamID(FreeText):
     Steam ID to use for fetching the library.
     """
     display_name = "Steam ID"
+
+class SteamLibraryExcludedGames(OptionSet):
+    """
+    List of game names (must be an exact match) or Steam App IDs to exclude from the Steam library.
+    """
+    display_name = "Steam Library Excluded Games"
 
 class SteamLibraryHolder:
     @functools.lru_cache(maxsize=None)
