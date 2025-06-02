@@ -116,3 +116,4 @@ nature of using the Steam API this game requires some special handling to set up
 ### Credits
 - Pack data sourced from: https://sims.fandom.com/wiki/The_Sims_4
 - Skill data sourced from: https://sims.fandom.com/wiki/List_of_skills_(The_Sims_4)
+- Career data sourced from: https://sims.fandom.com/wiki/Career_tracks#The_Sims_4

@@ -544,3 +544,140 @@ sims4_skills = [
         required_packs={Sims4ExpansionPack.BUSINESSES_AND_HOBBIES}
     ),
 ]
+
+class Sims4CareerBranch:
+    name: str
+    start_level: int
+    max_level: int
+    required_packs: Set[Sims4ExpansionPack | Sims4GamePack | Sims4StuffPack | Sims4Kit | Sims4CreatorKits]
+
+    def __init__(self, name: str, start_level: int, max_level: int,
+                 required_packs: Set[Sims4ExpansionPack | Sims4GamePack | Sims4StuffPack | Sims4Kit | Sims4CreatorKits] = None):
+        self.name = name
+        self.start_level = start_level
+        self.max_level = max_level
+        if required_packs is None:
+            required_packs = set()
+        self.required_packs = required_packs
+
+# TODO: How to model Freelancer??
+class Sims4Career:
+    name: str
+    max_level: int
+    branches: List[Sims4CareerBranch]
+    required_packs: Set[Sims4ExpansionPack | Sims4GamePack | Sims4StuffPack | Sims4Kit | Sims4CreatorKits]
+    age: str
+
+    def __init__(self, name: str, max_level: int, branches: List[Sims4CareerBranch] = None,
+                 required_packs: Set[Sims4ExpansionPack | Sims4GamePack | Sims4StuffPack | Sims4Kit | Sims4CreatorKits] = None,
+                 age: str = "Adult"):
+        self.name = name
+        self.max_level = max_level
+        if branches is None:
+            branches = []
+        self.branches = branches
+        if required_packs is None:
+            required_packs = set()
+        self.required_packs = required_packs
+        self.age = age
+
+sims4_careers = [
+    # Base Game Careers
+    Sims4Career(
+        name="Astronaut",
+        max_level=10,
+        branches=[
+            Sims4CareerBranch(
+                name="Interstellar Smuggler",
+                start_level=8,
+                max_level=10,
+            ),
+            Sims4CareerBranch(
+                name="Space Ranger",
+                start_level=8,
+                max_level=10,
+            )
+        ],
+    ),
+    Sims4Career(
+        name="Athlete",
+        max_level=10,
+        branches=[
+            Sims4CareerBranch(
+                name="Bodybuilder",
+                start_level=5,
+                max_level=10,
+            ),
+            Sims4CareerBranch(
+                name="Professional Athlete",
+                start_level=5,
+                max_level=10,
+            )
+        ],
+    ),
+    Sims4Career(
+        name="Business",
+        max_level=10,
+        branches=[
+            Sims4CareerBranch(
+                name="Investor",
+                start_level=7,
+                max_level=10,
+            ),
+            Sims4CareerBranch(
+                name="Management",
+                start_level=7,
+                max_level=10,
+            )
+        ],
+    ),
+    Sims4Career(
+        name="Criminal",
+        max_level=10,
+        branches=[
+            Sims4CareerBranch(
+                name="Boss",
+                start_level=6,
+                max_level=10,
+            ),
+            Sims4CareerBranch(
+                name="Oracle",
+                start_level=6,
+                max_level=10,
+            )
+        ],
+    ),
+    Sims4Career(
+        name="Culinary",
+        max_level=10,
+        branches=[
+            Sims4CareerBranch(
+                name="Chef",
+                start_level=6,
+                max_level=10,
+            ),
+            Sims4CareerBranch(
+                name="Mixologist",
+                start_level=6,
+                max_level=10,
+            )
+        ],
+    ),
+    Sims4Career(
+        name="Entertainer",
+        max_level=10,
+        branches=[
+            Sims4CareerBranch(
+                name="Comedian",
+                start_level=5,
+                max_level=10,
+            ),
+            Sims4CareerBranch(
+                name="Musician",
+                start_level=5,
+                max_level=10,
+            )
+        ],
+    ),
+    # TODO: ...
+]
