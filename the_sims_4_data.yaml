@@ -705,3 +705,92 @@ sims4Data:
                   level: 10
             - name: Mr./Ms. Solar System
               level: 10
+    - name: Business
+      type: Full-Time
+      levels:
+        - name: Mailroom Technician
+          level: 1
+        - name: Office Assistant
+          level: 2
+          promotion_tasks:
+            - skill: Charisma
+              level: 2
+        - name: Assistant to the Manager
+          level: 3
+          promotion_tasks:
+            - skill: Charisma
+              level: 2
+            - skill: Logic
+              level: 2
+        - name: Assistant Manager
+          level: 4
+          promotion_tasks:
+            - skill: Charisma
+              level: 3
+            - skill: Logic
+              level: 2
+        - name: Regional Manager
+          level: 5
+          promotion_tasks:
+            - skill: Charisma
+              level: 4
+            - skill: Logic
+              level: 2
+        - name: Senior Manager
+          level: 6
+          promotion_tasks:
+            - skill: Charisma
+              level: 4
+            - skill: Logic
+              level: 4
+      branches:
+        - name: Management
+          levels:
+            - name: Vice-President
+              level: 7
+              promotion_tasks:
+                - skill: Charisma
+                  level: 6
+                - skill: Logic
+                  level: 5
+            - name: President
+              level: 8
+              promotion_tasks:
+                - skill: Charisma
+                  level: 8
+                - skill: Logic
+                  level: 6
+            - name: CEO
+              level: 9
+              promotion_tasks:
+                - skill: Charisma
+                  level: 10
+                - skill: Logic
+                  level: 8
+            - name: Business Tycoon
+              level: 10
+        - name: Investor
+          levels:
+            - name: Futures Trader
+              level: 7
+              promotion_tasks:
+                - skill: Charisma
+                  level: 5
+                - skill: Logic
+                  level: 6
+            - name: Hedge Fund Manager
+              level: 8
+              promotion_tasks:
+                - skill: Charisma
+                  level: 6
+                - skill: Logic
+                  level: 8
+            - name: Corporate Raider
+              level: 9
+              promotion_tasks:
+                - skill: Charisma
+                  level: 8
+                - skill: Logic
+                  level: 10
+            - name: Angel Investor
+              level: 10
