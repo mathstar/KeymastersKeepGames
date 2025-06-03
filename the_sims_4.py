@@ -33,6 +33,7 @@ class TheSims4Game(Game):
     options_cls = TheSims4ArchipelagoOptions
 
     def game_objective_templates(self) -> List[GameObjectiveTemplate]:
+        # Task types: skill, career, aspiration, collection, explore town, build with pack, traits, milestones
         return [
             GameObjectiveTemplate(
                 label="Do a thing",

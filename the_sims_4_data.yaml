@@ -516,3 +516,87 @@ sims4Data:
       age: Adult
       required_packs:
         - BUSINESSES_AND_HOBBIES
+  careers:
+    # Base Game Careers
+    - name: Astronaut
+      type: Full-Time
+      levels:
+        - name: Intern
+          level: 1
+        - name: Module Cleaner
+          level: 2
+          promotion_tasks:
+            - skill: Logic
+              level: 2
+        - name: Technician
+          level: 3
+          promotion_tasks:
+            - skill: Logic
+              level: 3
+            - skill: Fitness
+              level: 2
+        - name: Command Center Lead
+          level: 4
+          promotion_tasks:
+            - skill: Logic
+              level: 4
+            - skill: Fitness
+              level: 3
+        - name: Low-Orbit Specialist
+          level: 5
+          promotion_tasks:
+            - skill: Logic
+              level: 5
+            - skill: Fitness
+              level: 4
+        - name: Space Cadet
+          level: 6
+          promotion_tasks:
+            - skill: Logic
+              level: 5
+            - skill: Fitness
+              level: 6
+        - name: Astronaut
+          level: 7
+          promotion_tasks:
+            - skill: Logic
+              level: 6
+            - skill: Fitness
+              level: 7
+      branches:
+        - name: Interstellar Smuggler
+          levels:
+            - name: Moon Mercenary
+              level: 8
+              promotion_tasks:
+                - skill: Rocket Science
+                  level: 2
+                - skill: Fitness
+                  level: 8
+            - name: Alien Goods Trader
+              level: 9
+              promotion_tasks:
+                - skill: Rocket Science
+                  level: 4
+                - skill: Fitness
+                  level: 10
+            - name: Interstellar Smuggler
+              level: 10
+        - name: Space Ranger
+          levels:
+            - name: Planet Patrol
+              level: 8
+              promotion_tasks:
+                - skill: Rocket Science
+                  level: 2
+                - skill: Fitness
+                  level: 8
+            - name: Sheriff of the Stars
+              level: 9
+              promotion_tasks:
+                - skill: Rocket Science
+                  level: 4
+                - skill: Fitness
+                  level: 10
+            - name: Space Ranger
+              level: 10
