@@ -600,3 +600,108 @@ sims4Data:
                   level: 10
             - name: Space Ranger
               level: 10
+    - name: Athlete
+      type: Full-Time
+      levels:
+        - name: Waterperson
+          level: 1
+        - name: Locker Room Attendant
+          level: 2
+          promotion_tasks:
+            - skill: Charisma
+              level: 2
+            - skill: Fitness
+              level: 2
+        - name: Team Mascot
+          level: 3
+          promotion_tasks:
+            - skill: Charisma
+              level: 3
+            - skill: Fitness
+              level: 3
+        - name: Dance Team Captain
+          level: 4
+          promotion_tasks:
+            - skill: Charisma
+              level: 4
+            - skill: Fitness
+              level: 4
+      branches:
+        - name: Professional Athlete
+          levels:
+            - name: Minor Leaguer
+              level: 5
+              promotion_tasks:
+                - skill: Charisma
+                  level: 4
+                - skill: Fitness
+                  level: 5
+            - name: Rookie
+              level: 6
+              promotion_tasks:
+                - skill: Charisma
+                  level: 4
+                - skill: Fitness
+                  level: 6
+            - name: Starter
+              level: 7
+              promotion_tasks:
+                - skill: Charisma
+                  level: 5
+                - skill: Fitness
+                  level: 8
+            - name: All-Star
+              level: 8
+              promotion_tasks:
+                - skill: Charisma
+                  level: 6
+                - skill: Fitness
+                  level: 9
+            - name: MVP
+              level: 9
+              promotion_tasks:
+                - skill: Charisma
+                  level: 8
+                - skill: Fitness
+                  level: 10
+            - name: Hall of Famer
+              level: 10
+        - name: Bodybuilder
+          levels:
+            - name: Personal Trainer
+              level: 5
+              promotion_tasks:
+                - skill: Charisma
+                  level: 5
+                - skill: Fitness
+                  level: 8
+            - name: Professional Bodybuilder
+              level: 6
+              promotion_tasks:
+                - skill: Charisma
+                  level: 5
+                - skill: Fitness
+                  level: 9
+            - name: Champion Bodybuilder
+              level: 7
+              promotion_tasks:
+                - skill: Charisma
+                  level: 6
+                - skill: Fitness
+                  level: 10
+            - name: Trainer to the Stars
+              level: 8
+              promotion_tasks:
+                - skill: Charisma
+                  level: 7
+                - skill: Fitness
+                  level: 10
+            - name: Celebrity Bodybuilder
+              level: 9
+              promotion_tasks:
+                - skill: Charisma
+                  level: 8
+                - skill: Fitness
+                  level: 10
+            - name: Mr./Ms. Solar System
+              level: 10
