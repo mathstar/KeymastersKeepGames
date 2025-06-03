@@ -1,0 +1,518 @@
+sims4Data:
+  version: v1.0.0
+  date: 2025-06-03
+  
+  packData:
+    expansionPacks:
+      - id: GET_TO_WORK
+        name: Get to Work
+      - id: GET_TOGETHER
+        name: Get Together
+      - id: CITY_LIVING
+        name: City Living
+      - id : CATS_AND_DOGS
+        name: Cats & Dogs
+      - id: SEASONS
+        name: Seasons
+      - id: GET_FAMOUS
+        name: Get Famous
+      - id: ISLAND_LIVING
+        name: Island Living
+      - id: DISCOVER_UNIVERSITY
+        name: Discover University
+      - id: ECO_LIFESTYLE
+        name: Eco Lifestyle
+      - id: SNOWY_ESCAPE
+        name: Snowy Escape
+      - id: COTTAGE_LIVING
+        name: Cottage Living
+      - id: HIGH_SCHOOL_YEARS
+        name: High School Years
+      - id: GROWING_TOGETHER
+        name: Growing Together
+      - id: HORSE_RANCH
+        name: Horse Ranch
+      - id: FOR_RENT
+        name: For Rent
+      - id: LOVESTRUCK
+        name: Lovestruck
+      - id: LIFE_AND_DEATH
+        name: Life & Death
+      - id: BUSINESSES_AND_HOBBIES
+        name: Businesses & Hobbies
+    gamePacks:
+      - id: OUTDOOR_RETREAT
+        name: Outdoor Retreat
+      - id: SPA_DAY
+        name: Spa Day
+      - id: DINE_OUT
+        name: Dine Out
+      - id: VAMPIRES
+        name: Vampires
+      - id: PARENTHOOD
+        name: Parenthood
+      - id: JUNGLE_ADVENTURE
+        name: Jungle Adventure
+      - id: STRANGERVILLE
+        name: StrangerVille
+      - id: REALM_OF_MAGIC
+        name: Realm of Magic
+      - id: JOURNEY_TO_BATUU
+        name: Journey to Batuu
+      - id: DREAM_HOME_DECORATOR
+        name: Dream Home Decorator
+      - id: MY_WEDDING_STORIES
+        name: My Wedding Stories
+      - id: WEREWOLVES
+        name: Werewolves
+    stuffPacks:
+      - id: LUXURY_PARTY
+        name: Luxury Party Stuff
+      - id: PERFECT_PATIO
+        name: Perfect Patio Stuff
+      - id: COOL_KITCHEN
+        name: Cool Kitchen Stuff
+      - id: SPOOKY
+        name: Spooky Stuff
+      - id: MOVIE_HANGOUT
+        name: Movie Hangout Stuff
+      - id: ROMANTIC_GARDEN
+        name: Romantic Garden Stuff
+      - id: KIDS_ROOM
+        name: Kids Room Stuff
+      - id: BACKYARD
+        name: Backyard Stuff
+      - id: VINTAGE_GLAMOUR
+        name: Vintage Glamour Stuff
+      - id: BOWLING_NIGHT
+        name: Bowling Night Stuff
+      - id: FITNESS
+        name: Fitness Stuff
+      - id: TODDLER
+        name: Toddler Stuff
+      - id: LAUNDRY_DAY
+        name: Laundry Day Stuff
+      - id: MY_FIRST_PET
+        name: My First Pet Stuff
+      - id: MOSCHINO
+        name: Moschino Stuff
+      - id: TINY_LIVING
+        name: Tiny Living Stuff
+      - id: NIFTY_KNITTING
+        name: Nifty Knitting Stuff
+      - id: PARANORMAL
+        name: Paranormal Stuff
+      - id: HOME_CHEF_HUSTLE
+        name: Home Chef Hustle Stuff
+      - id : CRYSTAL_CREATIONS
+        name : Crystal Creations Stuff
+    kits:
+      - id: BUST_THE_DUST
+        name: Bust the Dust Kit
+      - id: COUNTRY_KITCHEN
+        name: Country Kitchen Kit
+      - id: THROWBACK_FIT
+        name: Throwback Fit Kit
+      - id: COURTYARD_OASIS
+        name: Courtyard Oasis Kit
+      - id: INDUSTRIAL_LOFT
+        name: Industrial Loft Kit
+      - id: FASHION_STREET
+        name: Fashion Street Kit
+      - id: INCHEON_ARRIVALS
+        name: Incheon Arrivals Kit
+      - id: BLOOMING_ROOMS
+        name: Blooming Rooms Kit
+      - id: MODERN_MENSWEAR
+        name: Modern Menswear Kit
+      - id: CARNAVAL_STREETWEAR
+        name: Carnaval Streetwear Kit
+      - id: DECOR_TO_THE_MAX
+        name: Decor to the Max Kit
+      - id: MOONLIGHT_CHIC
+        name: Moonlight Chic Kit
+      - id: LITTLE_CAMPERS
+        name: Little Campers Kit
+      - id: FIRST_FITS
+        name: First Fits Kit
+      - id: DESERT_LUXE
+        name: Desert Luxe Kit
+      - id: EVERYDAY_CLUTTER
+        name: Everyday Clutter Kit
+      - id: PASTEL_POP
+        name: Pastel Pop Kit
+      - id: BATHROOM_CLUTTER
+        name: Bathroom Clutter Kit
+      - id : SIMTIMATES_COLLECTION
+        name : Simtimates Collection Kit
+      - id : BASEMENT_TREASURES
+        name : Basement Treasures Kit
+      - id : GREENHOUSE_HAVEN
+        name : Greenhouse Haven Kit
+      - id : GRUNGE_REVIVAL
+        name : Grunge Revival Kit
+      - id : BOOK_NOOK
+        name : Book Nook Kit
+      - id : MODERN_LUXE
+        name : Modern Luxe Kit
+      - id : POOLSIDE_SPLASH
+        name : Poolside Splash Kit
+      - id : CASTLE_ESTATES
+        name : Castle Estates Kit
+      - id : GOTH_GALORE
+        name : Goth Galore Kit
+      - id : URBAN_HOMAGE
+        name : Urban Homage Kit
+      - id : PARTY_ESSENTIALS
+        name : Party Essentials Kit
+      - id : RIVIERA_RETREAT
+        name : Riviera Retreat Kit
+      - id : COZY_BISTRO
+        name : Cozy Bistro Kit
+      - id : ARTIST_STUDIO
+        name : Artist Studio Kit
+      - id : STORYBOOK_NURSERY
+        name : Storybook Nursery Kit
+      - id : CASANOVA_CAVE
+        name : Casanova Cave Kit
+      - id : COMFY_GAMER
+        name : Comfy Gamer Kit
+      - id : SECRET_SANCTUARY
+        name : Secret Sanctuary Kit
+      - id : GOLDEN_YEARS
+        name : Golden Years Kit
+      - id : RESTORATION_WORKSHOP
+        name : Restoration Workshop Kit
+      - id: KITCHEN_CLUTTER
+        name: Kitchen Clutter Kit
+      - id: GOLDEN_YEARS
+        name: Golden Years Kit
+    creatorKits:
+      - id: SWEET_SLUMBER_PARTY
+        name: Sweet Slumber Party Creator Kit
+        creator: Trillyke
+      - id: COZY_KITSCH
+        name: Cozy Kitsch Creator Kit
+        creator: myshunosun
+      - id: BUSINESS_CHIC
+        name: Business Chic Creator Kit
+        creator: Madlen
+      - id: REFINED_LIVING_ROOM
+        name: Refined Living Room Creator Kit
+        creator: Pierisim
+      - id: SLEEK_BATHROOOM
+        name: Sleek Bathroom Creator Kit
+        creator: Syboulette
+      - id: SWEET_ALLURE
+        name: Sweet Allure Creator Kit
+        creator: aharris00britney
+  skills:
+    # Base Game Skills
+    - name: Charisma
+      max_level: 10
+      age: Adult
+    - name: Comedy
+      max_level: 10
+      age: Adult
+    - name: Cooking
+      max_level: 10
+      age: Adult
+    - name: Fishing
+      max_level: 10
+      age: Adult
+    - name: Fitness
+      max_level: 10
+      age: Adult
+    - name: Gardening
+      max_level: 10
+      age: Adult
+    - name: Gourmet Cooking
+      max_level: 10
+      age: Adult
+    - name: Guitar
+      max_level: 10
+      age: Adult
+    - name: Handiness
+      max_level: 10
+      age: Adult
+    - name: Logic
+      max_level: 10
+      age: Adult
+    - name: Mischief
+      max_level: 10
+      age: Adult
+    - name: Mixology
+      max_level: 10
+      age: Adult
+    - name: Painting
+      max_level: 10
+      age: Adult
+    - name: Photography
+      max_level: 5
+      age: Adult
+    - name: Piano
+      max_level: 10
+      age: Adult
+    - name: Programming
+      max_level: 10
+      age: Adult
+    - name: Rocket Science
+      max_level: 10
+      age: Adult
+    - name: Video Gaming
+      max_level: 10
+      age: Adult
+    - name: Violin
+      max_level: 10
+      age: Adult
+    - name: Writing
+      max_level: 10
+      age: Adult
+    # Toddler Skills
+    - name: Communication
+      max_level: 5
+      age: Toddler
+    - name: Imagination
+      max_level: 5
+      age: Toddler
+    - name: Movement
+      max_level: 5
+      age: Toddler
+    - name: Potty
+      max_level: 5
+      age: Toddler
+    - name: Thinking
+      max_level: 5
+      age: Toddler
+    # Child Skills
+    - name: Creativity
+      max_level: 10
+      age: Child
+    - name: Mental
+      max_level: 10
+      age: Child
+    - name: Motor
+      max_level: 10
+      age: Child
+    - name: Social
+      max_level: 10
+      age: Child
+    # Outdoor Retreat Skills
+    - name: Herbalism
+      max_level: 10
+      age: Adult
+      required_packs:
+        - OUTDOOR_RETREAT
+    # Get to Work Skills
+    - name: Baking
+      max_level: 10
+      age: Adult
+      required_packs:
+        - GET_TO_WORK
+    # Spa Day Skills
+    - name: Wellness
+      max_level: 10
+      age: Adult
+      required_packs:
+        - SPA_DAY
+    # Get Together Skills
+    - name: Dancing
+      max_level: 5
+      age: Adult
+      required_packs:
+        - GET_TOGETHER
+    - name: DJ Mixing
+      max_level: 10
+      age: Adult
+      required_packs:
+        - GET_TOGETHER
+    # City Living Skills
+    - name: Singing
+      max_level: 10
+      age: Adult
+      required_packs:
+        - CITY_LIVING
+    # Vampires Skills
+    - name: Pipe Organ
+      max_level: 10
+      age: Adult
+      required_packs:
+        - VAMPIRES
+    - name: Vampire Lore
+      max_level: 15
+      age: Adult
+      required_packs:
+        - VAMPIRES
+    # Bowling Night Skills
+    - name: Bowling
+      max_level: 5
+      age: Adult
+      required_packs:
+        - BOWLING_NIGHT
+    # Parenthood Skills
+    - name: Parenting
+      max_level: 10
+      age: Adult
+      required_packs:
+        - PARENTHOOD
+    # Cats & Dogs Skills
+    - name: Pet Training
+      max_level: 5
+      age: Adult
+      required_packs:
+        - CATS_AND_DOGS
+    - name: Veterinarian
+      max_level: 10
+      age: Adult
+      required_packs:
+        - CATS_AND_DOGS
+    # Jungle Adventure Skills
+    - name: Archaeology
+      max_level: 10
+      age: Adult
+      required_packs:
+        - JUNGLE_ADVENTURE
+    - name: Selvadoradian Culture
+      max_level: 10
+      age: Adult
+      required_packs:
+        - JUNGLE_ADVENTURE
+    # Seasons Skills
+    - name: Flower Arranging
+      max_level: 10
+      age: Adult
+      required_packs:
+        - SEASONS
+    # Get Famous Skills
+    - name: Acting
+      max_level: 10
+      age: Adult
+      required_packs:
+        - GET_FAMOUS
+    - name: Media Production
+      max_level: 5
+      age: Adult
+      required_packs:
+        - GET_FAMOUS
+    # Discover University Skills
+    - name: Research & Debate
+      max_level: 10
+      age: Adult
+      required_packs:
+        - DISCOVER_UNIVERSITY
+    - name: Robotics
+      max_level: 10
+      age: Adult
+      required_packs:
+        - DISCOVER_UNIVERSITY
+    # Eco Lifestyle Skills
+    - name: Fabrication
+      max_level: 10
+      age: Adult
+      required_packs:
+        - ECO_LIFESTYLE
+    - name: Juice Fizzing
+      max_level: 5
+      age: Adult
+      required_packs:
+        - ECO_LIFESTYLE
+    # Nifty Knitting Skills
+    - name: Knitting
+      max_level: 10
+      age: Adult
+      required_packs:
+        - NIFTY_KNITTING
+    # Snowy Escape Skills
+    - name: Rock Climbing
+      max_level: 10
+      age: Adult
+      required_packs:
+        - SNOWY_ESCAPE
+    - name: Skiing
+      max_level: 10
+      age: Adult
+      required_packs:
+        - SNOWY_ESCAPE
+    - name: Snowboarding
+      max_level: 10
+      age: Adult
+      required_packs:
+        - SNOWY_ESCAPE
+    # Paranormal Skills
+    - name: Medium
+      max_level: 5
+      age: Adult
+      required_packs:
+        - PARANORMAL
+    # Cottage Living Skills
+    - name: Cross-Stitch
+      max_level: 5
+      age: Adult
+      required_packs:
+        - COTTAGE_LIVING
+    # High School Years Skills
+    - name: Entrepreneur
+      max_level: 5
+      age: Adult
+      required_packs:
+        - HIGH_SCHOOL_YEARS
+    # Horse Ranch Skills
+    - name: Horse Riding
+      max_level: 10
+      age: Adult
+      required_packs:
+        - HORSE_RANCH
+    - name: Nectar Making
+      max_level: 5
+      age: Adult
+      required_packs:
+        - HORSE_RANCH
+    - name: Agility (Horse)
+      max_level: 10
+      age: Horse
+      required_packs:
+        - HORSE_RANCH
+    - name: Endurance (Horse)
+      max_level: 10
+      age: Horse
+      required_packs:
+        - HORSE_RANCH
+    - name: Jumping (Horse)
+      max_level: 10
+      age: Horse
+      required_packs:
+        - HORSE_RANCH
+    - name: Temperament (Horse)
+      max_level: 10
+      age: Horse
+      required_packs:
+        - HORSE_RANCH
+    # Crystal Creations Skills
+    - name: Gemology
+      max_level: 10
+      age: Adult
+      required_packs:
+        - CRYSTAL_CREATIONS
+    # Lovestruck Skills
+    - name: Romance
+      max_level: 10
+      age: Adult
+      required_packs:
+        - LOVESTRUCK
+    # Life & Death Skills
+    - name: Thanatology
+      max_level: 5
+      age: Adult
+      required_packs:
+        - LIFE_AND_DEATH
+    # Businesses & Hobbies Skills
+    - name: Pottery
+      max_level: 10
+      age: Adult
+      required_packs:
+        - BUSINESSES_AND_HOBBIES
+    - name: Tattooing
+      max_level: 10
+      age: Adult
+      required_packs:
+        - BUSINESSES_AND_HOBBIES
