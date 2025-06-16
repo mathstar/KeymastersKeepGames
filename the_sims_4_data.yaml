@@ -794,3 +794,91 @@ sims4Data:
                   level: 10
             - name: Angel Investor
               level: 10
+    - name: Criminal
+      type: Full-Time
+      levels:
+        - name: Tough Guy/Gal
+          level: 1
+        - name: Petty Thief
+          level: 2
+          promotion_tasks:
+            - skill: Mischief
+              level: 2
+        - name: Ringleader
+          level: 3
+          promotion_tasks:
+            - skill: Mischief
+              level: 3
+        - name: Felonius Monk
+          level: 4
+          promotion_tasks:
+            - skill: Mischief
+              level: 5
+        - name: Minor Crimelord
+          level: 5
+          promotion_tasks:
+            - skill: Mischief
+              level: 6
+      branches:
+        - name: Boss
+          levels:
+            - name: The Muscle
+              level: 6
+              promotion_tasks:
+                - skill: Mischief
+                  level: 7
+            - name: Getaway Driver
+              level: 7
+              promotion_tasks:
+                - skill: Mischief
+                  level: 8
+                - skill: Handiness
+                  level: 2
+            - name: Safe Cracker
+              level: 8
+              promotion_tasks:
+                - skill: Mischief
+                  level: 9
+                - skill: Handiness
+                  level: 4
+            - name: The Brains
+              level: 9
+              promotion_tasks:
+                - skill: Mischief
+                  level: 10
+                - skill: Handiness
+                  level: 6
+            - name: The Boss
+              level: 10
+        - name: Oracle
+          levels:
+            - name: DigiThief
+              level: 6
+              promotion_tasks:
+                - skill: Mischief
+                  level: 7
+                - skill: Programming
+                  level: 2
+            - name: Elite Hacker
+              level: 7
+              promotion_tasks:
+                - skill: Mischief
+                  level: 8
+                - skill: Programming
+                  level: 4
+            - name: An0nymous Ghost
+              level: 8
+              promotion_tasks:
+                - skill: Mischief
+                  level: 9
+                - skill: Programming
+                  level: 6
+            - name: Net Demon
+              level: 9
+              promotion_tasks:
+                - skill: Mischief
+                  level: 10
+                - skill: Programming
+                  level: 8
+            - name: The Oracle
+              level: 10
