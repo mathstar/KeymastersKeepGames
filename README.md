@@ -3,8 +3,76 @@ My game implementations for [Keymasters Keep](https://github.com/SerpentAI/Archi
 a custom world for [Archipelago](https://archipelago.gg/) - created by SerpentAI.
 
 # Games
+- [[Meta] Archipelago (Categories version)](#meta-archipelago-categories-version)
 - [Cook, Serve, Delicious! 2!!](#cook-serve-delicious-2)
 - [[Meta] Steam Library](#meta-steam-library)
+
+## [Meta] Archipelago (Categories version)
+Archipelago (Categories version) is a meta game that requires you to play Archipelago multiworlds with a specific
+number of games from categories you define. The idea is that you have a list of games for each category that will be
+chosen from when generating a multiworld. You can choose to have a particular percentage of trials specify that games
+must be chosen randomly from each category (randomization must be performed yourself outside of the keep) and a 
+percentage of trials that will allow you to choose the games yourself.
+
+### Trial Examples
+* Play an Archipelago with 2 FILLER GAMES, 1 MAIN GAMES, and 1 PLAYER'S CHOICE with SELF-CHOSEN games.
+* Play an Archipelago with 1 FILLER GAMES, 3 MAIN GAMES, and 1 PLAYER'S CHOICE with RANDOMIZED games.
+
+### Settings
+* **archipelago_categories**: A list of the categories you want to use with a minimum and maximum number of games for each.
+* **archipelago_categories_randomized_games_chance_percent**: The percentage of trials that will require you to choose games randomly from the categories.
+* **archipelago_categories_minimum_games_per_archipelago**: The minimum number of games that will be required for each Archipelago trial.
+* **archipelago_categories_maximum_games_per_archipelago**: The maximum number of games that will be required for each Archipelago trial.
+
+```yaml
+  archipelago_categories:
+    # Specifies the categories to include in each archipelago along with their min and max number of games. You can
+    # specify any categories you want.
+    FILLER GAMES:
+      max_games: 2
+      min_games: 0
+    MAIN GAMES:
+      max_games: 3
+      min_games: 1
+    PLAYER'S CHOICE:
+      max_games: 1
+      min_games: 0
+
+  archipelago_categories_randomized_games_chance_percent:
+    # The chance that an Archipelago must have its games randomly chosen from each list.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 0
+    # Maximum value is 100
+    50: 50
+    random: 0
+    random-low: 0
+    random-high: 0
+    never_randomized: 0 # equivalent to 0
+    always_randomized: 0 # equivalent to 100
+
+  archipelago_categories_minimum_games_per_archipelago:
+    # The minimum number of games that must be included in each Archipelago.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 1000
+    1: 50
+    random: 0
+    random-low: 0
+    random-high: 0
+
+  archipelago_categories_maximum_games_per_archipelago:
+    # The maximum number of games that can be included in each Archipelago.
+    #
+    # You can define additional values between the minimum and maximum values.
+    # Minimum value is 1
+    # Maximum value is 1000
+    10: 50
+    random: 0
+    random-low: 0
+    random-high: 0
+```
 
 ## Cook, Serve, Delicious! 2!!
 Cook, Serve, Delicious! 2!! is a fast-paced cooking simulation game where players manage a restaurant and serve various dishes to customers. The game features a variety of food items, cooking mechanics, and challenges.
